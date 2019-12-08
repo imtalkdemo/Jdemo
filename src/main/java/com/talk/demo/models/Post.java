@@ -13,9 +13,39 @@ public class Post implements Serializable {
     private List<User> To;
     private String Body;
     private String Type;
-    private int Msg_Type;
+    private String Msg_Type;
     private String Host;
     private String Domain;
+    private boolean ret;
+    private int errCode;
+    private String errMsg;
+
+    @JsonProperty("errcode")
+    public int getErrCode() {
+        return errCode;
+    }
+
+    public void setErrCode(int errCode) {
+        this.errCode = errCode;
+    }
+
+    @JsonProperty("errmsg")
+    public String getErrMsg() {
+        return errMsg;
+    }
+
+    public void setErrMsg(String errMsg) {
+        this.errMsg = errMsg;
+    }
+
+    public boolean isRet() {
+        return ret;
+    }
+
+    public void setRet(boolean ret) {
+        this.ret = ret;
+    }
+
 
     @JsonProperty("Domain")
     public String getDomain() {
@@ -28,7 +58,7 @@ public class Post implements Serializable {
 
     public Post() {}
 
-    public Post(String From, List<User> To, String Body, String Type, int Msg_Type, String Host, String Domain) {
+    public Post(String From, List<User> To, String Body, String Type, String Msg_Type, String Host, String Domain) {
         this.From = From;
         this.To = To;
         this.Body = Body;
@@ -65,11 +95,11 @@ public class Post implements Serializable {
     }
 
     @JsonProperty("Msg_Type")
-    public int getMsg_Type() {
+    public String getMsg_Type() {
         return this.Msg_Type;
     }
 
-    public void setMsg_Type(int msg_Type) {
+    public void setMsg_Type(String msg_Type) {
         this.Msg_Type = msg_Type;
     }
 

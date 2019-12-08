@@ -1,6 +1,5 @@
 package com.talk.demo.service;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.talk.demo.JsonUtils;
 import com.talk.demo.models.Post;
@@ -47,7 +46,7 @@ public class RestService {
 
 
         // create a post object
-        Post post = new Post("chao.zhang", toList, "hello", "chat", 1, "qtalk", "qtalk");
+        Post post = new Post("chao.zhang", toList, "hello", "chat", "1", "qtalk", "qtalk");
 
         logger.info("this is xxxxxxxx {}", post.toString());
         // build the request
