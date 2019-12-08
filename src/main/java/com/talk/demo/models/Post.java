@@ -2,6 +2,7 @@ package com.talk.demo.models;
 
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.talk.demo.JsonUtils;
 
 import java.io.Serializable;
 import java.util.List;
@@ -9,18 +10,34 @@ import java.util.Map;
 
 public class Post implements Serializable {
 
-    private String From;
-    private List<User> To;
-    private String Body;
-    private String Type;
-    private String Msg_Type;
-    private String Host;
-    private String Domain;
-    private boolean ret;
-    private int errCode;
-    private String errMsg;
 
+    @JsonProperty("ret")
+    private boolean ret;
     @JsonProperty("errcode")
+    private int errCode;
+    @JsonProperty("errmsg")
+    private String errMsg;
+    @JsonProperty("From")
+    private String from;
+
+    @JsonProperty(value = "To")
+    private List<User> to;
+
+    @JsonProperty(value = "Body")
+    private String body;
+
+    @JsonProperty(value = "Type")
+    private String type;
+
+    @JsonProperty(value = "Msg_Type")
+    private String msgType;
+
+    @JsonProperty(value = "Host")
+    private String host;
+
+    @JsonProperty(value = "Domain")
+    private String domain;
+
     public int getErrCode() {
         return errCode;
     }
@@ -29,7 +46,6 @@ public class Post implements Serializable {
         this.errCode = errCode;
     }
 
-    @JsonProperty("errmsg")
     public String getErrMsg() {
         return errMsg;
     }
@@ -49,85 +65,76 @@ public class Post implements Serializable {
 
     @JsonProperty("Domain")
     public String getDomain() {
-        return this.Domain;
+        return this.domain;
     }
 
     public void setDomain(String domain) {
-        this.Domain = domain;
+        this.domain = domain;
     }
 
     public Post() {}
 
-    public Post(String From, List<User> To, String Body, String Type, String Msg_Type, String Host, String Domain) {
-        this.From = From;
-        this.To = To;
-        this.Body = Body;
-        this.Type = Type;
-        this.Msg_Type = Msg_Type;
-        this.Host = Host;
-        this.Domain = Domain;
+
+    public Post(String from, List<User> to, String body, String type, String msgType, String host, String domain) {
+        this.from = from;
+        this.to = to;
+        this.body = body;
+        this.type = type;
+        this.msgType = msgType;
+        this.host = host;
+        this.domain = domain;
     }
 
     @JsonProperty("From")
     public String getFrom() {
-        return this.From;
+        return this.from;
     }
 
-    public void setFrom(String From) {
-        this.From = From;
+    public void setFrom(String from) {
+        this.from = from;
     }
     
     public List<User> getTo() {
-        return this.To;
+        return this.to;
     }
 
     public void setTo(List<User> to) {
-        this.To = to;
+        this.to = to;
     }
 
     @JsonProperty("Type")
     public String getType() {
-        return this.Type;
+        return this.type;
     }
 
     public void setType(String type) {
-        this.Type = type;
+        this.type = type;
     }
 
-    @JsonProperty("Msg_Type")
-    public String getMsg_Type() {
-        return this.Msg_Type;
+
+    public String getMsgType() {
+        return this.msgType;
     }
 
-    public void setMsg_Type(String msg_Type) {
-        this.Msg_Type = msg_Type;
+    public void setMsgType(String msgType) {
+        this.msgType = msgType;
     }
 
     @JsonProperty("Host")
     public String getHost() {
-        return this.Host;
+        return this.host;
     }
 
     public void setHost(String host) {
-        this.Host = host;
+        this.host = host;
     }
 
     @JsonProperty("Body")
     public String getBody() {
-        return this.Body;
+        return this.body;
     }
 
     public void setBody(String body) {
-        this.Body = body;
-    }
-
-    @Override
-    public String toString() {
-        return JSON.toJSONString(this);
-//        return "Post{" +
-//                "From=" + From +
-//                ", To=" + To +
-//                ", Body='" + Body + '\'' +
-//                '}';
+        this.body = body;
     }
 }
