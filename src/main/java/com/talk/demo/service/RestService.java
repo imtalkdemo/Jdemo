@@ -2,8 +2,8 @@ package com.talk.demo.service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.talk.demo.JsonUtils;
-import com.talk.demo.models.Post;
-import com.talk.demo.models.User;
+import com.talk.demo.model.Post;
+import com.talk.demo.model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.web.client.RestTemplateBuilder;

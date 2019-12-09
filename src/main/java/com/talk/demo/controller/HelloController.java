@@ -1,7 +1,7 @@
 package com.talk.demo.controller;
 
 import com.talk.demo.DemoApplication;
-import com.talk.demo.models.Post;
+import com.talk.demo.model.Post;
 import com.talk.demo.service.RestService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,10 +17,6 @@ public class HelloController {
     @Autowired
     private RestService restService;
 
-//    HelloController(RestService restService) {
-//        this.restService = restService;
-//    }
-//
     @GetMapping("/")
     public String getTaxiFare() {
         return "hello, world";

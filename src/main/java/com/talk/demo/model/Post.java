@@ -1,12 +1,9 @@
-package com.talk.demo.models;
+package com.talk.demo.model;
 
-import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.talk.demo.JsonUtils;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Map;
 
 public class Post implements Serializable {
 

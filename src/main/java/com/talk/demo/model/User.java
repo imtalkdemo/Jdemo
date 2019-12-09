@@ -1,4 +1,4 @@
-package com.talk.demo.models;
+package com.talk.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
